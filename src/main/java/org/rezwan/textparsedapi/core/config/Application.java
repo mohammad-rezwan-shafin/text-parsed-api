@@ -14,7 +14,6 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
 
@@ -24,11 +23,11 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 @ComponentScan(
         basePackages = {
+            "org.rezwan.textparsedapi.core.config",            
             "org.rezwan.textparsedapi.core.service",            
             "org.rezwan.textparsedapi.api.endpoint",
         }
 )
-@EnableScheduling
 public class Application {
     
     public static void main(String[] args) {
