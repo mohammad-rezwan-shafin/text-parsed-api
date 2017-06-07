@@ -6,7 +6,7 @@ apply plugin: "groovy"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-mainClassName = "org.shafin.textparsedapi.core.config.Application"
+mainClassName = "org.rezwan.textparsedapi.core.config.Application"
 
 jar {
     baseName = "text-parsed-api"
@@ -22,12 +22,14 @@ dependencies {
     compileOnly ("org.projectlombok:lombok:1.16.12")
     compile ("org.springframework.boot:spring-boot-starter-web:") {
         exclude module : "org.springframework.boot:spring-boot-starter-data-jpa"
+        exclude module : "org.springframework.boot:spring-boot-starter-tomcat"
     }
     compile ("org.springframework.boot:spring-boot-starter-jetty:")
-    compile ("org.springframework.boot:spring-boot-starter-actuator:")
+    compile ("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:")
 
     testCompile ("org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE") {
         exclude module : "org.springframework.boot:spring-boot-starter-data-jpa"
+        exclude module : "org.springframework.boot:spring-boot-starter-tomcat"
     }
 }
 
