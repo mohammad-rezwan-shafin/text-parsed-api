@@ -5,6 +5,8 @@
  */
 package org.rezwan.textparsedapi.core.service.impl;
 
+import java.util.HashMap;
+import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.rezwan.textparsedapi.api.dto.SearchRequest;
 import org.rezwan.textparsedapi.api.dto.SearchResponse;
@@ -27,12 +29,35 @@ public class CounterAPISearchServiceImpl extends ServiceBase implements CounterA
     @Override
     public SearchResponse processSearchRequest(SearchRequest searchRequest) {
         log.info("Received search request :: {}", searchRequest);
-        SearchResponse searchResponse = null; 
+
+        String sourceText = adapterService.getParagraph();
+        log.info("REST Adapter response = {}", sourceText);
         
-        log.info(" REST Adapter response = {}", adapterService.getParagraph() );
-        
-//        SearchResponse searchResponse = counterAPISearchService.processSearchRequest(searchRequest);        
+        SearchResponse searchResponse = this.createSearchResponse(searchRequest, sourceText); 
+
         log.info("Responding with :: {}", searchResponse);
         return searchResponse;        
+    }
+    
+    private SearchResponse createSearchResponse(SearchRequest searchRequest, String sourceText) {
+        SearchResponse searchResponse = new SearchResponse();
+        Map<String, Long> [] arrReturn = new Map [searchRequest.getSearchText().length];   
+        
+        int i=0;
+        for(String str:searchRequest.getSearchText()) {            
+            String [] strArr = sourceText.toLowerCase().split(str.toLowerCase());
+
+            long longVal = 0;
+            if (strArr == null) {
+                longVal = 0;
+            } else {
+                longVal = strArr.length - 1;
+            }
+            Map <String, Long> mapCounter = new HashMap<>();
+            mapCounter.put(str, longVal);
+            arrReturn[i++] = mapCounter;
+        }
+        searchResponse.setCounts(arrReturn);
+        return searchResponse;
     }
 }

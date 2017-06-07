@@ -5,6 +5,8 @@
  */
 package org.rezwan.textparsedapi.api.dto;
 
+import java.util.Map;
+
 /**
  *
  * @author shafin
@@ -13,5 +15,5 @@ package org.rezwan.textparsedapi.api.dto;
 @lombok.Data
 @lombok.ToString
 public class SearchResponse {
-    private String[] counts;
+    private Map <String,Long>  [] counts;
 }
