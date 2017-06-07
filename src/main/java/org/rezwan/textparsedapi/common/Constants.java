@@ -15,6 +15,8 @@ public class Constants {
     
     public static final String CONTENT_TYPE =  "Content-Type";
     public static final String MEDIA_TYPE_TEXT_CSV =  "text/csv";
+    public static final String HTTP_BASIC_AUTHENTICATE_HEADER =  "WWW-Authenticate";
+    public static final String HTTP_BASIC_AUTHENTICATE_REALM_PREFIX =  "Basic realm=";
     
     public static final String API_PARAGRAPH =  "/paragraph";
     public static final String API_COUNTER_API_SEARCH =  "/counter-api/search";

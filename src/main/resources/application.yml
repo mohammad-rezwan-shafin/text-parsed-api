@@ -12,6 +12,11 @@ org.rezwan.textparsedapi:
         topCSVSeparator: "|"
         paragraphFileLocation: TextParagraphDataSource.txt
         restSearchSourceURL : http://localhost:8080/paragraph
+        security:
+            user: optus
+            password: candidates
+            roles: USER
+            realm: OptusUsers
 
 spring:
     profiles:
