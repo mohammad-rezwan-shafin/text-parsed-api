@@ -24,7 +24,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 @ComponentScan(
         basePackages = {
-            "org.rezwan.textparsedapi.core.service",
+            "org.rezwan.textparsedapi.core.service",            
             "org.rezwan.textparsedapi.api.endpoint",
         }
 )

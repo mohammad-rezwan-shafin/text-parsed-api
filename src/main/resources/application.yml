@@ -6,6 +6,10 @@ application:
     baseContext: text-parsed-api-0.1.0
     title: Text Parsed API
     version: 0.1
+    
+org.rezwan.textparsedapi:
+    config:
+        paragraphFileLocation: TextParagraphDataSource.txt
 
 spring:
     profiles:

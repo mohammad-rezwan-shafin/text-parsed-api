@@ -10,6 +10,7 @@ import org.rezwan.textparsedapi.api.dto.SearchRequest;
 import org.rezwan.textparsedapi.api.dto.SearchResponse;
 import org.rezwan.textparsedapi.common.Constants;
 import org.rezwan.textparsedapi.core.service.CounterAPISearchService;
+import org.rezwan.textparsedapi.core.service.ParagraphService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,22 +25,21 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-public class CounterAPISearchEndpoint {
+public class TextSourceParagrahEndpoint {
     
     @Autowired
-    private CounterAPISearchService counterAPISearchService;
+    private ParagraphService paragraphService;
     
     @ResponseBody    
     @RequestMapping(
-            path = Constants.API_COUNTER_API_SEARCH,
-            method = RequestMethod.POST,
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE
+            path = Constants.API_PARAGRAPH,
+            method = RequestMethod.GET,
+            produces = MediaType.TEXT_PLAIN_VALUE
     )
-    public SearchResponse search(@RequestBody SearchRequest searchRequest) {
-        log.info("Received search request :: {}", searchRequest);
-        SearchResponse searchResponse = counterAPISearchService.processSearchRequest(searchRequest);        
-        log.info("Responding with :: {}", searchResponse);
-        return searchResponse;
+    public String getParagraph() {
+        log.info("Received request.");
+        String txtParagraph = paragraphService.getParagraph();        
+        log.info("Responding with :: {}", txtParagraph);
+        return txtParagraph;
     }    
 }
