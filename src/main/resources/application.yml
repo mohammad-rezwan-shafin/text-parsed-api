@@ -1,0 +1,19 @@
+# application.yml
+# default settings
+
+application:
+    name: TextParsedAPI
+    baseContext: text-parsed-api-0.1.0
+    title: Text Parsed API
+    version: 0.1
+
+spring:
+    profiles:
+                
+# This is the Jetty HTTP Server 
+server:
+    # Jetty HTTP Server Port
+    port: 8080
+            
+---
+
