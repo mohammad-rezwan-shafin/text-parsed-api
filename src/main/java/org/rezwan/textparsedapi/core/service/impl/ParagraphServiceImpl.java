@@ -42,6 +42,7 @@ public class ParagraphServiceImpl  extends ServiceBase implements ParagraphServi
         }
     }
 
+    @Override
     public String getParagraph() {
         log.info("Received request");
         String strReturn = null;

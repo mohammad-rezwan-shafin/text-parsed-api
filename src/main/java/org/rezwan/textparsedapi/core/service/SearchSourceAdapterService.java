@@ -10,5 +10,5 @@ package org.rezwan.textparsedapi.core.service;
  * @author shafin
  */
 public interface SearchSourceAdapterService extends ServiceInterface {
-    
+    String getParagraph();    
 }

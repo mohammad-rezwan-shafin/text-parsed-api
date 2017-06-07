@@ -10,6 +10,7 @@ application:
 org.rezwan.textparsedapi:
     config:
         paragraphFileLocation: TextParagraphDataSource.txt
+        restSearchSourceURL : http://localhost:8080/paragraph
 
 spring:
     profiles:
