@@ -1,6 +1,8 @@
 # application.yml
 # default settings
-
+spring:
+    profiles:
+                
 application:
     name: TextParsedAPI
     baseContext: text-parsed-api-0.1.0
@@ -18,9 +20,6 @@ org.rezwan.textparsedapi:
             roles: USER
             realm: OptusUsers
 
-spring:
-    profiles:
-                
 # This is the Jetty HTTP Server 
 server:
     # Jetty HTTP Server Port
