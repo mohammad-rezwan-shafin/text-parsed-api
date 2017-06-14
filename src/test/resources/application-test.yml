@@ -1,0 +1,16 @@
+# application.yml
+# default settings
+spring:
+    profiles: test
+                
+org.rezwan.textparsedapi:
+    config:
+        restSearchSourceURL : http://localhost:18080/paragraph
+ 
+# This is the Jetty HTTP Server 
+server:
+    # Jetty HTTP Server Port
+    port: 18080
+            
+---
+
