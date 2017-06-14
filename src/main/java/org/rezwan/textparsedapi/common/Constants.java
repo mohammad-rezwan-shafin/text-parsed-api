@@ -13,7 +13,6 @@ public class Constants {
     
     public static final String NEWLINE =  System.getProperty("line.separator");
     
-    public static final String CONTENT_TYPE =  "Content-Type";
     public static final String MEDIA_TYPE_TEXT_CSV =  "text/csv";
     public static final String HTTP_BASIC_AUTHENTICATE_HEADER =  "WWW-Authenticate";
     public static final String HTTP_BASIC_AUTHENTICATE_REALM_PREFIX =  "Basic realm=";
