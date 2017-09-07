@@ -2,6 +2,7 @@ apply plugin: "application"
 apply plugin: "java"
 apply plugin: "org.springframework.boot"
 apply plugin: "groovy"
+apply plugin: 'findbugs'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
