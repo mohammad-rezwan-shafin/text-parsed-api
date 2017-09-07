@@ -17,8 +17,16 @@ jar {
 findbugs {
     reportsDir = file("$project.buildDir/reports/findbugs")
     effort = "max"
-    reportLevel = "high"
-    ignoreFailures = false
+    reportLevel = "medium"  //"high"
+    ignoreFailures = true
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+        html.stylesheet resources.text.fromFile('src/main/resources/findbugs-color.xsl')
+    }
 }
 
 repositories {
